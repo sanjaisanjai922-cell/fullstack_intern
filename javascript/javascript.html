@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <script>
+        // var
+        console.log("Hello");
+        console.log("Welcome to JavaScript!");
+        var a=10;
+        a=11;
+        console.log(a);
+        var a=20;
+        console.log(a);
+        // let
+        let b=10;
+        b=11;
+        console.log(b);
+        // const
+        const c=10;
+
+        console.log(c);
+        var college="Sece"
+        function Employee(name,company) {
+            console.log("My name is ",name, " and I am working in ",company," ,I studied in ",college);
+        }
+        Employee("Alice", "google");
+        Employee("Bob", "Microsoft");
+        Employee("Charlie", "Amazon");
+
+        let data1=function() {
+            return "hello javascript";
+        }
+        console.log(data1());
+
+        let multiply=(a,b)=>{console.log(a*b); };
+        
+
+        function sece(callback){
+            console.log("I am a callback function");
+            callback(4,10);
+        }
+        sece(multiply);
+
+        let fetch_api=new Promise((resolve,reject)=>{
+            let api=true;
+            if(api){
+                resolve("Fetched api data");
+            }else{
+                reject("Failed to fetch api data");
+            }
+        });
+
+        fetch_api.then(data=>console.log(data));
+        
+
+        let foodorder=new Promise((resolve,reject)=>{
+            let api=true;
+            if(api){
+                setTimeout(()=>{
+                    resolve("Food order placed successfully");
+                },3000);
+                
+            }else{
+                setTimeout(()=>{
+                    reject("Failed to place food order");
+                },3000);
+                
+            }
+        });
+
+        foodorder.then(data=>console.log(data));
+    </script>
+</body>
+</html>
