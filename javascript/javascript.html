@@ -8,7 +8,7 @@
 <body>
     <script>
         // var
-        console.log("Hello");
+        /*console.log("Hello");
         console.log("Welcome to JavaScript!");
         var a=10;
         a=11;
@@ -72,7 +72,65 @@
             }
         });
 
-        foodorder.then(data=>console.log(data));
+        foodorder.then(data=>console.log(data));*/
+        let exp={
+            name : "Alice",
+            age : 25,     
+            salary : 50000
+        }
+        console.log(exp.name);
+        console.log(exp.age); 
+        console.log(exp.salary);
+
+        let exp1=[
+            {
+            name : "Alice",
+            age : 25,     
+            salary : 50000,
+            skills:["c++","java","python"]
+            },
+            {
+            name : "Bob",
+            age : 30,
+            salary : 60000,
+            company:{
+                c1:"tcs",
+                c2:"accenture"
+            }
+            }
+        ];
+
+        console.log(exp1[0].salary);
+        console.log(exp1[1].company.c2);
+        console.log(exp1[0].skills[1]);
+        //J'SON'
+
+        let stringify_data=JSON.stringify(exp);
+        console.log(stringify_data);
+        let parse_data=JSON.parse(stringify_data);
+        console.log(parse_data);
+        
+        let copy=exp;
+        copy.salary=80000;
+        console.log("og:",exp.salary);
+        console.log("copy:",copy.salary);
+        
+        //Shallow copy
+        let shallow_copy={...exp};
+        shallow_copy.salary=90000;
+        console.log("og:",exp.salary);
+        console.log("shallow copy:",shallow_copy.salary);
+        
+        let shallow_copy1={...exp1};
+        shallow_copy1[1].company.c1="Infosys";
+        console.log("og:",exp1[1].company.c1);
+        console.log("shallow copy:",shallow_copy1[1].company.c1);
+
+        //deep copy
+        let deep_copy=JSON.parse(JSON.stringify(exp1));
+        deep_copy[1].company.c1="Wipro";
+        console.log("og:",exp1[1].company.c1);
+        console.log("deep copy:",deep_copy[1].company.c1);
     </script>
 </body>
 </html>
